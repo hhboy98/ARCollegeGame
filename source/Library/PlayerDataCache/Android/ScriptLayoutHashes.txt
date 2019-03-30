@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-D:/ARCollegeGame/source/out/argame.apk
+D:/DSoftware/UnityProject/ARCollegeGame/source/20190330-1.apk
 SceneListBegin?
 Assets/Scenes/loginScene.unity
 Assets/Scenes/mainScene.unity
