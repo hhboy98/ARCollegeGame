@@ -26,7 +26,7 @@ public class vegetableFly : MonoBehaviour
         float y = -5.75f;
         float x = Random.Range(-6.5f,6.5f); //随机水果出现的x坐标
         GameObject fruit = Instantiate(fruits[Random.Range(0,fruits.Length)]) as GameObject;
-        fruit.transform.position = new Vector3(x,y,-30);
+        fruit.transform.position = new Vector3(x,y,0);
         //根据x坐标决定水果飞行的带方向的初始速度范围
         float xSpeed = 0f;
         if (x <= -3f)

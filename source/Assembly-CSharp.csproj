@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Controller\vegetableCutScene\knife.cs" />
     <Compile Include="Assets\Scripts\Controller\vegetableCutScene\knifeMove.cs" />
     <Compile Include="Assets\Scripts\Controller\vegetableCutScene\scoreManager.cs" />
+    <Compile Include="Assets\Scripts\Controller\vegetableCutScene\timeManager.cs" />
     <Compile Include="Assets\Scripts\Controller\vegetableCutScene\vegetableCut.cs" />
     <Compile Include="Assets\Scripts\Controller\vegetableCutScene\vegetableFly.cs" />
     <Compile Include="Assets\Scripts\Dao\BaseDao.cs" />

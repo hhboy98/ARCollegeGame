@@ -30,6 +30,7 @@ public class knife : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))      //当鼠标左键按下的时候记录第一个点
         {
+            Debug.Log("Input.GetMouseButtonDown(0)");
             myLinRenderer.SetVertexCount(count = 0);               //先清除之前未清除的刀痕
             //GetComponent<AudioSource>().Play();
             time = timeInterval;
