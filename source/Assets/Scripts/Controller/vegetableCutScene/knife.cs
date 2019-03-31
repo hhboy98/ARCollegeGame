@@ -19,7 +19,7 @@ public class knife : MonoBehaviour
     // Update is called once per frame
     void addline()
     {
-        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,50));    //切换到世界坐标系
+        Vector3 pos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,10));    //切换到世界坐标系
         myLinRenderer.SetVertexCount(++count);
         myLinRenderer.SetPosition(count - 1, pos);
         if (count == 5)                                                 //清除刀痕 保证刀痕不能一直存在 无限延长
