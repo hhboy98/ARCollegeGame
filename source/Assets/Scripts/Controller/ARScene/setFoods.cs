@@ -4,13 +4,16 @@ public class setFoods : MonoBehaviour {
 
  
     void Start () {
-        changeSpriteByImage();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (this.GetComponent<SpriteRenderer>().sprite == null)
+        {
+            changeSpriteByImage();
+        }
+    }
     void changeSpriteByImage()
     {
         GameObject itemPrefab = Resources.Load<GameObject>("Prefabs/foods");
@@ -20,12 +23,12 @@ public class setFoods : MonoBehaviour {
         switch (i)
         {
             case 1:
-                spriteB = Resources.Load<Sprite>("tomato");
-                AddTag("tomato");
+                spriteB = Resources.Load<Sprite>("BackpackImage/1-tomato");
+                AddTag("1-tomato");
                 break;
             case 2:
-                spriteB = Resources.Load<Sprite>("egg");
-                AddTag("egg");
+                spriteB = Resources.Load<Sprite>("BackpackImage/2-egg");
+                AddTag("2-egg");
                 break;
         }
         this.GetComponent<SpriteRenderer>().sprite = spriteB;
@@ -34,6 +37,7 @@ public class setFoods : MonoBehaviour {
     //给预设体加标签（图片名字）
     void AddTag(string tag)
     {
-            this.tag = tag;
+        Debug.Log(tag);
+        this.tag = tag;
     }
 }

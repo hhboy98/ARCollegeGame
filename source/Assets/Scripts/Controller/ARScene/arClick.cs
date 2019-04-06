@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 //arCamera的点击事件
 public class arClick : MonoBehaviour {
 
-	//初始化
-	void Start () {
+    public IBackPackService backpackService;
+
+    //初始化
+    void Start () {
+        backpackService = new BackpackService();
     }
 	
 	//点击监听
@@ -19,40 +22,28 @@ public class arClick : MonoBehaviour {
             RaycastHit hitInfo;
             if (Physics.Raycast(ray,out hitInfo) )
             {
-                testClick("tomato", hitInfo);
-                testClick("egg", hitInfo);
+                testClick("1-tomato", hitInfo);
+                testClick("2-egg", hitInfo);
             }
         }
-          
 	}
     void testClick(string tag , RaycastHit hitInfo)
     {
         if (hitInfo.transform.CompareTag(tag))
         {
-            Debug.Log("MOVED451");
-            GameObject[] toBeDestroyed = GameObject.FindGameObjectsWithTag(tag);
+            GameObject toBeDestroyed = GameObject.FindGameObjectWithTag(tag);
             if (toBeDestroyed != null)
             {
-                for (int i = 0; i < 1; i++)
-                {
-                    Destroy(toBeDestroyed[i]);
-                    toBeDestroyed = null;
-                    addFoodToDatabase(tag);
-                }
+                toBeDestroyed.GetComponent<SpriteRenderer>().sprite = null;
+                addFoodToDatabase(tag);
             }
-
         }
-        else
-        {
-            Debug.Log("12252");
-
-        }
-
     }
 
 
     void addFoodToDatabase(string name)
     {
-        //什么也没有
+        string id = name.Split('-')[0];
+        backpackService.addItem(id);
     }
 }

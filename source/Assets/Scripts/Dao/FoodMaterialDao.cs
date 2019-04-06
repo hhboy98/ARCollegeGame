@@ -14,6 +14,7 @@ public class FoodMaterialDao:BaseDao{
     //根据食材ID获取食材
     public FoodMaterial selectFoodMaterialByID(int ID)
     {
+        Debug.Log("食材ID"+ID);
         string sql = "select * from " + TABLE_NAME + " where id = " + ID;
         SqliteDataReader sdr = sh.ExecuteQuery(sql);
         if (sdr.Read() == false)
